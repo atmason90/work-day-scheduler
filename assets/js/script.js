@@ -38,20 +38,21 @@ function compareHour() {
     // foreach method to loop over each time block
     $(".time-block").each(function () {
         var block = $(this).attr("id");
-        
+        console.log(typeof block);
+        console.log(typeof hour);
         // add or remove past/present/future classes based on current hour with if/else if/else statement
         if (block < hour) {
             $(this).addClass("past");
             $(this).removeClass("present");
             $(this).removeClass("future");
-        } else if (block === hour) {
-            $(this).addClass("present");
+        } else if (block == hour) {
             $(this).removeClass("past");
+            $(this).addClass("present");
             $(this).removeClass("future");
         } else {
-            $(this).addClass("future");
             $(this).removeClass("past");
             $(this).removeClass("present");
+            $(this).addClass("future");
         }
     });
 };
