@@ -19,38 +19,46 @@ $(".saveBtn").on("click", function () {
 });
 
 // retrieve any stored taks from local storage for each timeblock
-$("#8Am .description").val(localStorage.getItem("8Am"));
-$("#9Am .description").val(localStorage.getItem("9Am"));
-$("#10Am .description").val(localStorage.getItem("10Am"));
-$("#11Am .description").val(localStorage.getItem("11Am"));
-$("#12Pm .description").val(localStorage.getItem("12Pm"));
-$("#1Pm .description").val(localStorage.getItem("1Pm"));
-$("#2Pm .description").val(localStorage.getItem("2Pm"));
-$("#3Pm .description").val(localStorage.getItem("3Pm"));
-$("#4Pm .description").val(localStorage.getItem("4Pm"));
-$("#5Pm .description").val(localStorage.getItem("5Pm"));
-$("#6Pm .description").val(localStorage.getItem("6Pm"));
+$("#8 .description").val(localStorage.getItem("8"));
+$("#9 .description").val(localStorage.getItem("9"));
+$("#10 .description").val(localStorage.getItem("10"));
+$("#11 .description").val(localStorage.getItem("11"));
+$("#12 .description").val(localStorage.getItem("12"));
+$("#13 .description").val(localStorage.getItem("13"));
+$("#14 .description").val(localStorage.getItem("14"));
+$("#15 .description").val(localStorage.getItem("15"));
+$("#16 .description").val(localStorage.getItem("16"));
+$("#17 .description").val(localStorage.getItem("17"));
+$("#18 .description").val(localStorage.getItem("18"));
+
+// write function to check current hour with moment js and style according to past/present/future
+function compareHour() {
+    var hour = moment().hour();
+    
+    // foreach method to loop over each time block
+    $(".time-block").each(function () {
+        var block = $(this).attr("id");
+        
+        // add or remove past/present/future classes based on current hour with if/else if/else statement
+        if (block < hour) {
+            $(this).addClass("past");
+            $(this).removeClass("present");
+            $(this).removeClass("future");
+        } else if (block === hour) {
+            $(this).addClass("present");
+            $(this).removeClass("past");
+            $(this).removeClass("future");
+        } else {
+            $(this).addClass("future");
+            $(this).removeClass("past");
+            $(this).removeClass("present");
+        }
+    });
+};
+
+// call on the function
+compareHour();
 
 
-
-
-    // variables for:
-        // hours of day the scheduler will span (8am-6pm)
-        // timeblock
-            // foreach to create a separate timeblock for every hour
-
-// Extra small devices (portrait phones, less than 576px)
-// No media query for `xs` since this is the default in Bootstrap
-
-// // Small devices (landscape phones, 576px and up)
-// @media (min-width: 576px) { ... }
-
-// // Medium devices (tablets, 768px and up)
-// @media (min-width: 768px) { ... }
-
-// // Large devices (desktops, 992px and up)
-// @media (min-width: 992px) { ... }
-
-// // Extra large devices (large desktops, 1200px and up)
-// @media (min-width: 1200px) { ... }
+    
         
