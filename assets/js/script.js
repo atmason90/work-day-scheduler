@@ -1,9 +1,7 @@
-// What do I need?
-    // var using moment.js to display current day in the p tag with class .currentDay
-    // var using moment.js for current time of day
+// use moment js to add current time in jumbotron
 $("#currentDay").text(moment().format("dddd, MMMM Do YYYY, h:mm:ss"));
 
-// set interval to constantly update the time
+// use set interval to constantly update the time
 let updateTime = setInterval(function () {
     let currentTime = moment().format("dddd, MMMM Do YYYY, h:mm:ss")
     $("#currentDay").text(currentTime)
