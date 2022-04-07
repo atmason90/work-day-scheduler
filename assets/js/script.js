@@ -2,10 +2,36 @@
 $("#currentDay").text(moment().format("dddd, MMMM Do YYYY, h:mm:ss"));
 
 // use set interval to constantly update the time
-let updateTime = setInterval(function () {
-    let currentTime = moment().format("dddd, MMMM Do YYYY, h:mm:ss")
+var updateTime = setInterval(function () {
+    var currentTime = moment().format("dddd, MMMM Do YYYY, h:mm:ss")
     $("#currentDay").text(currentTime)
 }, 1000);
+
+// add event listener to save button for hour and description
+$(".saveBtn").on("click", function () {
+    console.log(this);
+    var time = $(this).parent().attr("id");
+    console.log(time);
+    var task = $(this).siblings(".description").val();
+    console.log(task);
+
+    localStorage.setItem(time, task);
+});
+
+// retrieve any stored taks from local storage for each timeblock
+$("#8Am .description").val(localStorage.getItem("8Am"));
+$("#9Am .description").val(localStorage.getItem("9Am"));
+$("#10Am .description").val(localStorage.getItem("10Am"));
+$("#11Am .description").val(localStorage.getItem("11Am"));
+$("#12Pm .description").val(localStorage.getItem("12Pm"));
+$("#1Pm .description").val(localStorage.getItem("1Pm"));
+$("#2Pm .description").val(localStorage.getItem("2Pm"));
+$("#3Pm .description").val(localStorage.getItem("3Pm"));
+$("#4Pm .description").val(localStorage.getItem("4Pm"));
+$("#5Pm .description").val(localStorage.getItem("5Pm"));
+$("#6Pm .description").val(localStorage.getItem("6Pm"));
+
+
 
 
     // variables for:
