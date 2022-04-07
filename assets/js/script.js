@@ -9,11 +9,11 @@ var updateTime = setInterval(function () {
 
 // add event listener to save button for hour and description
 $(".saveBtn").on("click", function () {
-    console.log(this);
+    // console.log(this);
     var time = $(this).parent().attr("id");
-    console.log(time);
+    // console.log(time);
     var task = $(this).siblings(".description").val();
-    console.log(task);
+    // console.log(task);
 
     localStorage.setItem(time, task);
 });
@@ -38,8 +38,8 @@ function compareHour() {
     // foreach method to loop over each time block
     $(".time-block").each(function () {
         var block = $(this).attr("id");
-        console.log(typeof block);
-        console.log(typeof hour);
+        // console.log(typeof block);
+        // console.log(typeof hour);
         // add or remove past/present/future classes based on current hour with if/else if/else statement
         if (block < hour) {
             $(this).addClass("past");
