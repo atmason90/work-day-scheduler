@@ -9,6 +9,14 @@ The application allows the user to input text into each hour time-block and save
 
 Another key function of this page is automatic styling for each time-block based on the current time of day. Hours that occured in the past will appear with a gray background, the current hour will appear with a red background, and hours that occur in the future will appear with a green background. 
 
+## Links
+
+Link to GitHub Repository:
+[GitHub Repository](https://github.com/atmason90/work-day-scheduler)
+
+Link to Deployed Application:
+[deployed application](https://atmason90.github.io/work-day-scheduler/)
+
 ## Application Demo
 
 This demo displays the functionality of the application. As shown, the header of the page displays a constantly updated date and time. When the user enters a task into a time-block, clicks the save button, then refreshes the page, the entered data persists. 
