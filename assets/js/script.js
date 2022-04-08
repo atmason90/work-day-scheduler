@@ -30,6 +30,7 @@ $("#15 .description").val(localStorage.getItem("15"));
 $("#16 .description").val(localStorage.getItem("16"));
 $("#17 .description").val(localStorage.getItem("17"));
 $("#18 .description").val(localStorage.getItem("18"));
+$("#19 .description").val(localStorage.getItem("19"));
 
 // write function to check current hour with moment js and style according to past/present/future
 function compareHour() {
